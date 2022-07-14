@@ -56,10 +56,10 @@ function processMap(map) {
   });
   ret.sort((a, b) => {
     if (b.length !== a.length)
-      return b.length > a.length;
-    if (b[0] === a[0])
-      return a[2] > b[2];
-    return b[0] < a[0];
+      return b.length > a.length;   // 1. sort by length
+    if (b[0] !== a[0])  
+      return b[0] < a[0];           // 2. sort by 1st character, 1, 2 or =
+    return a[2] > b[2];             // 3. sort by letter
   })
   return ret.join("/");
 }
