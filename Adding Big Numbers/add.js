@@ -10,13 +10,13 @@
 */
 
 function add(a, b) {
-    var res = '', c = 0
-    a = a.split('')
-    b = b.split('')
+    let res = '', c = 0;
+    a = a.split('');
+    b = b.split('');
     while (a.length || b.length || c) {
-        c += Number(a.pop() || 0) + Number(b.pop() || 0)
-        res = c % 10 + res
-        c = (c > 9) ? 1 : 0
+        c += Number(a.pop() || 0) + Number(b.pop() || 0);
+        res = c % 10 + res;
+        c = (c > 9) ? 1 : 0;
     }
-    return res
+    return res;
 }
