@@ -19,6 +19,12 @@
 
 function topThreeWords(text) {
     const map = {};
-    text.toLowerCase().replace(/([a-z][a-z']*)/g, match => { map[match] ? map[match]++ : map[match] = 1; })
-    return Object.entries(map).sort((a, b) => b[1] - a[1]).map((e) => e[0]).slice(0, 3);
+    text.toLowerCase()
+        .replace(/([a-z][a-z']*)/g, match => {
+            map[match] ? map[match]++ : map[match] = 1;
+        })
+    return Object.entries(map)
+        .sort((a, b) => b[1] - a[1])
+        .map((e) => e[0])
+        .slice(0, 3);
 }
